@@ -122,9 +122,19 @@ address {
 }
 
 .site-nav .link.current {
+  position: relative;
   color: var(--accent-color);
 }
-
+.site-nav .link.current::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
 .contact-list {
   display: flex;
   align-items: center;
@@ -157,11 +167,13 @@ address {
 .header .link {
   display: flex;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mail, .phone {
   align-items: center;
   margin-right: 10px;
   fill: var(--secondary-text-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Главный блок */
 .section.hero {
@@ -330,6 +342,9 @@ address {
   border: transparent;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn:hover,
 .btn:focus {
@@ -382,9 +397,9 @@ address {
   margin-right: 10px;
   width: 44px;
   height: 44px;
-
   border-radius: 50%;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-socials-item:last-child {
@@ -403,7 +418,6 @@ address {
   justify-content: center;
   width: 100%;
   height: 100%;
-  
 }
 
 .team-socials-item:hover,
@@ -413,6 +427,7 @@ address {
 
 .team-socials-svg {
   fill: var(--icons-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-socials-item:hover .team-socials-svg,
 .team-socials-item:focus .team-socials-svg {
@@ -423,6 +438,7 @@ address {
 }
 .client-logo {
   fill:var(--icons-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-item {
   display: flex;
@@ -444,6 +460,7 @@ address {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-item:hover,
 .client-item:focus {
@@ -487,6 +504,7 @@ address {
 .address-list .link {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-list .link:hover,
 .address-list .link:focus {
@@ -529,6 +547,7 @@ address {
 }
 .portfolio.link {
   display: inline-block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio.link:focus, .portfolio.link:hover {
   box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%), 1px 4px 6px rgb(0 0 0 / 16%);
